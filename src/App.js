@@ -1,13 +1,16 @@
-'use strict';
+import Popup from "./Popup";
+import FormValidator from "./FormValidator";
+import Card from "./Card";
+import CardList from "./CardList";
+import UserInfo from "./UserInfo";
 
-class App {
+export default class App {
     constructor(root, api) {
         this.root = root;
         this.api = api;
     }
 
-    renderPage = () => {
-        // Отлично!: Проверка существования занчения переменной.
+    renderPage() {
         if (!this.api) {
             console.log('Rest service is undefined');
             return;
@@ -56,7 +59,6 @@ class App {
                         'Имя',
                         'О себе',
                         'Сохранить',
-                        // Можно лучше: Значения можно получать из userInfo, создав там необходимые геттеры.
                         userName.textContent,
                         userJob.textContent
                     );
@@ -132,8 +134,6 @@ class App {
         const cardElements = cards.map(element => new Card(element.link, element.name));
         const cardList = new CardList(this.root.querySelector('.places-list'), cardElements);
 
-        // Можно лучше: Обработку клика по картинке следует также реализовать в классе Card,
-        // в который можно передавать коллбэк, в котором реализовать открытие попапа.
         cardList.getDomNode().addEventListener('click', (event) => {
             if (event.target.classList.contains('place-card__image')) {
                 imagePopup.open(null, event.target.style.backgroundImage);
