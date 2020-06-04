@@ -1,4 +1,6 @@
-export default class Api {
+'use strict';
+
+class Api {
     constructor(params) {
         const { baseUrl, headers } = params;
 

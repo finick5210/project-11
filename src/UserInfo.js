@@ -1,6 +1,4 @@
-import { addClass } from '../utils/Utils';
-
-export default class UserInfo {
+class UserInfo {
     setUserInfo(name, job, avatar) {
         this.name = name;
         this.job = job;

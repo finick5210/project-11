@@ -1,6 +1,11 @@
-import { resetError, toggleClass } from '../utils/Utils';
+'use strict';
 
-export default class Popup {
+// Можно лучше: Динамическое преобразование форм попапов всё же не самый лучший вариант в данном случае.
+// Оптимальней иметь класс Popup, который отвечает только за открытие и закрытие попапа. На вход может принимать dom-элемент попапа.
+// В разметке попапы лучше держать отдельно, а в js создавать отдельный инстанс класса Popup под каждый попап.
+// В случае развития проекта, когда поля между формами будут сильно различаться,
+// то текущий метод будет требовать много усилий для доработки и поддержки.
+class Popup {
     constructor(domNode, type) {
         this.domNode = domNode;
         this.type = type;
@@ -57,7 +62,7 @@ export default class Popup {
         }
     };
 
-    _setEventListeners(dom, type) {
+    _setEventListeners = (dom, type) => {
         switch (type) {
             case 'image': {
                 dom.querySelector('.image-popup__close').addEventListener('click', () => {

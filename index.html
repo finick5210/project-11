@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mesto</title>
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+    <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body>
     <div class="root">
         <header class="header root__section">
-            <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
+            <img src="./images/logo.svg" alt="mesto logo" class="logo">
         </header>
         <div class="profile root__section">
             <div class="user-info"></div>
@@ -21,7 +21,7 @@
         </div>
         <div class="popup">
             <div class="popup__content">
-                <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+                <img src="./images/close.svg" alt="" class="popup__close">
                 <h3 class="popup__title"></h3>
                 <!-- Новое место-->
                 <form class="popup__form" name="new">
@@ -38,12 +38,20 @@
         </div>
         <div class="image-popup">
             <div class="image-popup__content">
-                <img src="<%=require('./images/close.svg').default%>" alt="" class="image-popup__close">
+                <img src="./images/close.svg" alt="" class="image-popup__close">
                 <img alt="" class="image-popup__picture"/>
             </div>
         </div>
     </div>
-    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+    <script src="service/Api.js"></script>
+    <script src="./src/App.js"></script>
+    <script src="./src/Card.js"></script>
+    <script src="./src/CardList.js"></script>
+    <script src="./src/Popup.js"></script>
+    <script src="./src/FormValidator.js"></script>
+    <script src="./src/UserInfo.js"></script>
+    <script src="./utils/Utils.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

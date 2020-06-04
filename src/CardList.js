@@ -1,4 +1,6 @@
-export default class CardList {
+'use strict';
+
+class CardList {
     constructor(dom, cards) {
         this.domNode = dom;
         this.cards = cards;

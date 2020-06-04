@@ -1,6 +1,6 @@
-import { addClass } from '../utils/Utils';
+'use strict';
 
-export default class Card {
+class Card {
     constructor(image, description) {
         this.image = image;
         this.description = description;
