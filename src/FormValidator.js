@@ -1,9 +1,7 @@
-'use strict';
+import { EMPTY_FIELD_ERROR_TEXT, INCORRECT_FIELD_LENGTH_ERROR } from "../utils/constants";
+import { addClass, resetError } from '../utils/Utils';
 
-class FormValidator {
-    _emptyFieldErrorText = 'Это обязательное поле';
-    _incorrectFieldLengthError = 'Должно быть от 2 до 30 символов';
-
+export default class FormValidator {
     constructor(popup) {
         this.popup = popup;
     }
@@ -21,10 +19,10 @@ class FormValidator {
     checkInputValidity(field, error) {
         const length = field.value.length;
         if (length === 0) {
-            error.innerHTML = this._emptyFieldErrorText;
+            error.innerHTML = EMPTY_FIELD_ERROR_TEXT;
             addClass(error, 'popup__error');
         } else if (length < 2 || length > 30) {
-            error.innerHTML = this._incorrectFieldLengthError;
+            error.innerHTML = INCORRECT_FIELD_LENGTH_ERROR;
             addClass(error, 'popup__error');
         } else {
             resetError(error);
