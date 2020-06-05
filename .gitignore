@@ -1,2 +1,2 @@
 /node_modules
-/distnpm run deploy
+/dist

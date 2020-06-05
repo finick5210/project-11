@@ -1,7 +1,6 @@
 import Api from "./service/Api";
-import App from "./src/App";
+import App from "./app/App";
 import './pages/index.css';
-import './images/logo.svg'
 
 const app = new App(
     document.querySelector('.root'),
